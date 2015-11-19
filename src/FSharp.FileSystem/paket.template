@@ -1,0 +1,23 @@
+type project
+owners
+    Xavier Zwirtz
+authors 
+    Xavier Zwirtz
+projectUrl
+    http://github.com/xavierzwirtz/FSharp.FileSystem
+iconUrl
+    https://raw.githubusercontent.com/xavierzwirtz/FSharp.FileSystem/master/docs/files/img/logo.png
+licenseUrl
+    http://github.com/xavierzwirtz/FSharp.FileSystem/blob/master/LICENSE.txt
+requireLicenseAcceptance
+    false
+copyright
+    Copyright 2015
+tags
+    fsharp
+summary
+    FSharp'y methods of reading and writing to the file system.
+description
+    FSharp'y methods of reading and writing to the file system.
+
+
