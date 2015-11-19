@@ -2,7 +2,7 @@ module FSharp.FileSystem.Tests.DirectoryTests
 
 open FSharp.FileSystem
 open FSharp.FileSystem.Path
-open NUnit.Framework
+open Xunit
 
 let tempFolder() = 
     tempPath() @@ System.Guid.NewGuid().ToString()
@@ -22,7 +22,7 @@ let checkDir (spec : string seq) path =
         if contents <> file then
             failwith "contents dont match"
 
-[<Test>]
+[<Fact>]
 let ``copyToDir`` () =
     let spec = [ "foo/bar1/baz" 
                  "foo/bar2/baz"
@@ -35,7 +35,7 @@ let ``copyToDir`` () =
     checkDir spec (dest @@ dirName)
 
 
-[<Test>]
+[<Fact>]
 let ``copyContentsToDir`` () =
     let spec = [ "foo/bar1/baz" 
                  "foo/bar2/baz"
@@ -47,7 +47,7 @@ let ``copyContentsToDir`` () =
     checkDir spec (dest)
 
 
-[<Test>]
+[<Fact>]
 let ``glob`` () =
     let spec = [ "foo/bar1/baz" 
                  "foo/bar2/baz"
@@ -55,6 +55,6 @@ let ``glob`` () =
                  "bog/bid" ]
     let source = createDir spec
 
-    let files = source |> Directory.getFilesWithGlob "**/*.bar"
+    let files = source |> Directory.getFilesWithGlob "**/*.bar" |> Seq.toList
     printfn "%A" files
-    Assert.AreEqual([source @@ "foo/bar2/bill.bar"], files)
+    Assert.Equal<list<string>>([source @@ "foo/bar2/bill.bar"], files)

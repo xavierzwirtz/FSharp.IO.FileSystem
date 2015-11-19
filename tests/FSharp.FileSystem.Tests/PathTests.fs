@@ -2,11 +2,11 @@ module FSharp.FileSystem.Tests.PathTests
 
 open FSharp.FileSystem
 open FSharp.FileSystem.Path
-open NUnit.Framework
+open Xunit
 
 let pathEqual expected actual =
-    Assert.AreEqual(expected |> normalize, actual |> normalize)
-[<Test>]
+    Assert.Equal(expected |> normalize, actual |> normalize)
+[<Fact>]
 let ``combine`` () =
     combine "foo" "bar"
     |> pathEqual ("foo\\bar")

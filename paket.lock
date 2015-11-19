@@ -14,13 +14,16 @@ NUGET
     Microsoft.Net.Http (2.2.29)
       Microsoft.Bcl (>= 1.1.10)
       Microsoft.Bcl.Build (>= 1.0.14)
-    NUnit (3.0.0)
-    NUnit.Console (3.0.0)
-    NUnit.Runners (3.0.0)
-      NUnit.Console (3.0.0)
     Octokit (0.16.0)
       Microsoft.Net.Http
     SourceLink.Fake (1.1.0)
+    xunit.abstractions (2.0.0)
+    xunit.assert (2.0.0)
+    xunit.core (2.0.0)
+      xunit.extensibility.core (2.0.0)
+    xunit.extensibility.core (2.0.0)
+      xunit.abstractions (2.0.0)
+    xunit.runner.console (2.0.0)
 GITHUB
   remote: fsharp/FAKE
   specs:

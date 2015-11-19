@@ -2,7 +2,7 @@ module FSharp.FileSystem.Tests.FileTests
 
 open FSharp.FileSystem
 open FSharp.FileSystem.Path
-open NUnit.Framework
+open Xunit
 
 let create() =
     let p = Path.tempFile()
@@ -25,28 +25,28 @@ let createEmpty() =
 let tempFile() =
     Path.tempPath() @@ System.Guid.NewGuid().ToString()
 
-[<Test>]
+[<Fact>]
 let ``copy skip - no exist`` () =
     let source = create()
     let dest = tempFile()
     File.copyTo source dest File.Skip
     check dest
 
-[<Test>]
+[<Fact>]
 let ``copy skip - exist`` () =
     let source = create()
     let dest = createEmpty()
     File.copyTo source dest File.Skip
     checkNot dest
 
-[<Test>]
+[<Fact>]
 let ``copy overwrite - no exist`` () =
     let source = create()
     let dest = tempFile()
     File.copyTo source dest File.Skip
     check dest
 
-[<Test>]
+[<Fact>]
 let ``copy overwrite - exist`` () =
     let source = create()
     let dest = createEmpty()
@@ -54,14 +54,14 @@ let ``copy overwrite - exist`` () =
     check dest
 
 
-[<Test>]
+[<Fact>]
 let ``copy fail - no exist`` () =
     let source = create()
     let dest = tempFile()
     File.copyTo source dest File.Skip
     check dest
 
-[<Test>]
+[<Fact>]
 let ``copy fail - exist`` () =
     let source = create()
     let dest = createEmpty()
