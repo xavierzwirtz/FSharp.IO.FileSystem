@@ -14,8 +14,15 @@ module File =
 
     let readAllText path =
         IOFile.ReadAllText path
-    let writeAllText path contents=
+
+    let readAllTextWithEncoding path encoding =
+        IOFile.ReadAllText(path, encoding)
+
+    let writeAllText path contents =
         IOFile.WriteAllText(path, contents)
+
+    let writeAllTextWithEncoding path contents encoding =
+        IOFile.WriteAllText(path, contents, encoding)
 
     let copyTo source destination existingHandling =
         match existingHandling with

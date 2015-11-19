@@ -56,9 +56,10 @@
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <ItemGroup>
     <Compile Include="FileTests.fs" />
-    <Compile Include="DirectoryTests.fs" />
     <None Include="paket.references" />
     <Compile Include="PathTests.fs" />
+    <Compile Include="GlobbingTests.fs" />
+    <Compile Include="DirectoryTests.fs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="mscorlib" />

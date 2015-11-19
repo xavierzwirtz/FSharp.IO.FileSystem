@@ -47,6 +47,7 @@
     <Compile Include="InternalTypes.fs" />
     <Compile Include="Path.fs" />
     <Compile Include="File.fs" />
+    <Compile Include="Globbing.fs" />
     <Compile Include="Directory.fs" />
     <None Include="Script.fsx" />
     <None Include="paket.references" />

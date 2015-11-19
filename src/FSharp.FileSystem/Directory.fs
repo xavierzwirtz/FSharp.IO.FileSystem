@@ -13,15 +13,31 @@ module Directory =
 
     let getFiles path = 
         IODirectory.GetFiles(path)
-        |> Seq.map(Path.fileName)
-        |> Seq.toList
-        |> Seq.ofList
+        |> Seq.ofArray
 
     let getDirectories path = 
         IODirectory.GetDirectories(path) 
-        |> Seq.map(Path.fileName)
-        |> Seq.toList
-        |> Seq.ofList
+        |> Seq.ofArray
+    
+    let getFilesWithGlob pattern path =
+        let matcher = Globbing.compileMatch pattern
+        let rec checkDir path =
+            let files = 
+                seq {
+                    for file in getFiles path do
+                        if matcher file then
+                            yield file
+                }
+
+            let children =
+                seq {
+                    for dir in getDirectories path do
+                        //if matcher dir then
+                        yield! checkDir dir
+                }
+
+            Seq.concat [files; children]
+        checkDir path
 
     let moveToDir source destination =
         IODirectory.Move(source, destination)
@@ -31,8 +47,10 @@ module Directory =
         if not (exists destination) then
             create destination
         for file in getFiles source do
+            let file = Path.fileName file
             File.copyTo (source @@ file) (destination @@ file) existingHandling
         for dir in getDirectories source do
+            let dir = Path.fileName dir
             copyContentsToDir (source @@ dir) (destination @@ dir) existingHandling
                        
     /// copyToDir "/foo" "/bar" would create "/bar/foo" and copy the contents of "/foo" into it.
