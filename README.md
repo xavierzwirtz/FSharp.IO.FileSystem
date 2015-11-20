@@ -3,7 +3,7 @@
 
 # FSharp.IO.FileSystem
 
-This project provides idiomatic F# ways of interacting with the file.
+This project provides idiomatic F# ways of interacting with the file system.
 
  
 ## Build Status
