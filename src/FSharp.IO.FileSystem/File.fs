@@ -1,4 +1,4 @@
-namespace FSharp.FileSystem
+namespace FSharp.IO.FileSystem
 
 /// Provides methods for accessing files.
 module File = 

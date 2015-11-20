@@ -10,8 +10,8 @@ Introducing your project
 Say more
 
 *)
-#r "FSharp.FileSystem.dll"
-open FSharp.FileSystem
+#r "FSharp.IO.FileSystem.dll"
+open FSharp.IO.FileSystem
 
 Library.hello 0
 (**

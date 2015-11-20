@@ -1,7 +1,7 @@
-module FSharp.FileSystem.Tests.PathTests
+module FSharp.IO.FileSystem.Tests.PathTests
 
-open FSharp.FileSystem
-open FSharp.FileSystem.Path
+open FSharp.IO.FileSystem
+open FSharp.IO.FileSystem.Path
 open Xunit
 
 let pathEqual expected actual =

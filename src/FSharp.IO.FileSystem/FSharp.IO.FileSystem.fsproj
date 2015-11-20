@@ -7,11 +7,11 @@
     <SchemaVersion>2.0</SchemaVersion>
     <ProjectGuid>ddce8470-8b89-4ea0-9aba-05df067f35d6</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>FSharp.FileSystem</RootNamespace>
-    <AssemblyName>FSharp.FileSystem</AssemblyName>
+    <RootNamespace>FSharp.IO.FileSystem</RootNamespace>
+    <AssemblyName>FSharp.IO.FileSystem</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <TargetFSharpCoreVersion>4.4.0.0</TargetFSharpCoreVersion>
-    <Name>FSharp.FileSystem</Name>
+    <Name>FSharp.IO.FileSystem</Name>
     <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -31,7 +31,7 @@
     <OutputPath>.\bin\Release</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
     <WarningLevel>3</WarningLevel>
-    <DocumentationFile>.\bin\Release\FSharp.FileSystem.xml</DocumentationFile>
+    <DocumentationFile>.\bin\Release\FSharp.IO.FileSystem.xml</DocumentationFile>
     <OtherFlags>--warnon:1182</OtherFlags>
   </PropertyGroup>
   <ItemGroup>

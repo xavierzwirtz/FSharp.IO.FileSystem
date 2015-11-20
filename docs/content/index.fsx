@@ -4,7 +4,7 @@
 #I "../../bin"
 
 (**
-FSharp.FileSystem
+FSharp.IO.FileSystem
 ======================
 
 Documentation
@@ -13,8 +13,8 @@ Documentation
   <div class="span1"></div>
   <div class="span6">
     <div class="well well-small" id="nuget">
-      The FSharp.FileSystem library can be <a href="https://nuget.org/packages/FSharp.FileSystem">installed from NuGet</a>:
-      <pre>PM> Install-Package FSharp.FileSystem</pre>
+      The FSharp.IO.FileSystem library can be <a href="https://nuget.org/packages/FSharp.IO.FileSystem">installed from NuGet</a>:
+      <pre>PM> Install-Package FSharp.IO.FileSystem</pre>
     </div>
   </div>
   <div class="span1"></div>
@@ -26,8 +26,8 @@ Example
 This example demonstrates using a function defined in this sample library.
 
 *)
-#r "FSharp.FileSystem.dll"
-open FSharp.FileSystem
+#r "FSharp.IO.FileSystem.dll"
+open FSharp.IO.FileSystem
 
 printfn "hello = %i" <| Library.hello 0
 
@@ -59,9 +59,9 @@ The library is available under Public Domain license, which allows modification 
 redistribution for both commercial and non-commercial purposes. For more information see the 
 [License file][license] in the GitHub repository. 
 
-  [content]: https://github.com/fsprojects/FSharp.FileSystem/tree/master/docs/content
-  [gh]: https://github.com/fsprojects/FSharp.FileSystem
-  [issues]: https://github.com/fsprojects/FSharp.FileSystem/issues
-  [readme]: https://github.com/fsprojects/FSharp.FileSystem/blob/master/README.md
-  [license]: https://github.com/fsprojects/FSharp.FileSystem/blob/master/LICENSE.txt
+  [content]: https://github.com/fsprojects/FSharp.IO.FileSystem/tree/master/docs/content
+  [gh]: https://github.com/fsprojects/FSharp.IO.FileSystem
+  [issues]: https://github.com/fsprojects/FSharp.IO.FileSystem/issues
+  [readme]: https://github.com/fsprojects/FSharp.IO.FileSystem/blob/master/README.md
+  [license]: https://github.com/fsprojects/FSharp.IO.FileSystem/blob/master/LICENSE.txt
 *)

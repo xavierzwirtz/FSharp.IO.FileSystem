@@ -1,6 +1,6 @@
-module FSharp.FileSystem.Tests.GlobbingTests
+module FSharp.IO.FileSystem.Tests.GlobbingTests
 
-open FSharp.FileSystem
+open FSharp.IO.FileSystem
 open Xunit
 
 let shouldMatch pattern paths =

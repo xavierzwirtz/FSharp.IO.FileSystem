@@ -1,5 +1,5 @@
 ﻿[<AutoOpen>]
-module FSharp.FileSystem.InternalTypes
+module FSharp.IO.FileSystem.InternalTypes
 
 type IOFile = System.IO.File
 type IODirectory = System.IO.Directory

@@ -9,7 +9,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".paket", ".paket", "{63297B
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{A6A6AF7D-D6E3-442D-9B1E-58CC91879BE1}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.FileSystem", "src\FSharp.FileSystem\FSharp.FileSystem.fsproj", "{DDCE8470-8B89-4EA0-9ABA-05DF067F35D6}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.IO.FileSystem", "src\FSharp.IO.FileSystem\FSharp.IO.FileSystem.fsproj", "{DDCE8470-8B89-4EA0-9ABA-05DF067F35D6}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "project", "project", "{BF60BC93-E09B-4E5F-9D85-95A519479D54}"
 	ProjectSection(SolutionItems) = preProject
@@ -32,7 +32,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "content", "content", "{8E6D
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{ED8079DD-2B06-4030-9F0F-DC548F98E1C4}"
 EndProject
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.FileSystem.Tests", "tests\FSharp.FileSystem.Tests\FSharp.FileSystem.Tests.fsproj", "{05EA0DE3-EE3C-47C0-9D7F-152FB2A4842F}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "FSharp.IO.FileSystem.Tests", "tests\FSharp.IO.FileSystem.Tests\FSharp.IO.FileSystem.Tests.fsproj", "{05EA0DE3-EE3C-47C0-9D7F-152FB2A4842F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

@@ -1,7 +1,7 @@
-module FSharp.FileSystem.Tests.DirectoryTests
+module FSharp.IO.FileSystem.Tests.DirectoryTests
 
-open FSharp.FileSystem
-open FSharp.FileSystem.Path
+open FSharp.IO.FileSystem
+open FSharp.IO.FileSystem.Path
 open Xunit
 
 let tempFolder() = 

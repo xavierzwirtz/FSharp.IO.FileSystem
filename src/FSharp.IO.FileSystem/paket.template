@@ -4,11 +4,11 @@ owners
 authors 
     Xavier Zwirtz
 projectUrl
-    http://github.com/xavierzwirtz/FSharp.FileSystem
+    http://github.com/xavierzwirtz/FSharp.IO.FileSystem
 iconUrl
-    https://raw.githubusercontent.com/xavierzwirtz/FSharp.FileSystem/master/docs/files/img/logo.png
+    https://raw.githubusercontent.com/xavierzwirtz/FSharp.IO.FileSystem/master/docs/files/img/logo.png
 licenseUrl
-    http://github.com/xavierzwirtz/FSharp.FileSystem/blob/master/LICENSE.txt
+    http://github.com/xavierzwirtz/FSharp.IO.FileSystem/blob/master/LICENSE.txt
 requireLicenseAcceptance
     false
 copyright

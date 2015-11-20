@@ -1,7 +1,7 @@
-[![Issue Stats](http://issuestats.com/github/xavierzwirtz/FSharp.FileSystem/badge/issue)](http://issuestats.com/github/xavierzwirtz/FSharp.FileSystem)
-[![Issue Stats](http://issuestats.com/github/xavierzwirtz/FSharp.FileSystem/badge/pr)](http://issuestats.com/github/xavierzwirtz/FSharp.FileSystem)
+[![Issue Stats](http://issuestats.com/github/xavierzwirtz/FSharp.IO.FileSystem/badge/issue)](http://issuestats.com/github/xavierzwirtz/FSharp.IO.FileSystem)
+[![Issue Stats](http://issuestats.com/github/xavierzwirtz/FSharp.IO.FileSystem/badge/pr)](http://issuestats.com/github/xavierzwirtz/FSharp.IO.FileSystem)
 
-# FSharp.FileSystem
+# FSharp.IO.FileSystem
 
 This project provides idiomatic F# ways of interacting with the file.
 
@@ -10,7 +10,7 @@ This project provides idiomatic F# ways of interacting with the file.
 
 Mono | .NET
 ---- | ----
-[![Mono CI Build Status](https://img.shields.io/travis/xavierzwirtz/FSharp.FileSystem/master.svg)](https://travis-ci.org/xavierzwirtz/FSharp.FileSystem) | [![.NET Build Status](https://img.shields.io/appveyor/ci/fsgit/ProjectScaffold/master.svg)](https://ci.appveyor.com/project/fsgit/projectscaffold)
+[![Mono CI Build Status](https://img.shields.io/travis/xavierzwirtz/FSharp.IO.FileSystem/master.svg)](https://travis-ci.org/xavierzwirtz/FSharp.IO.FileSystem) | [![.NET Build Status](https://img.shields.io/appveyor/ci/fsgit/ProjectScaffold/master.svg)](https://ci.appveyor.com/project/fsgit/projectscaffold)
 
 ## Maintainer(s)
 

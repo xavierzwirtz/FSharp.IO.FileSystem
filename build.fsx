@@ -28,7 +28,7 @@ open SourceLink
 
 // The name of the project
 // (used by attributes in AssemblyInfo, name of a NuGet package and directory in 'src')
-let project = "FSharp.FileSystem"
+let project = "FSharp.IO.FileSystem"
 
 // Short summary of the project
 // (used as description in AssemblyInfo and as a short summary for NuGet package)
@@ -45,7 +45,7 @@ let authors = [ "Xavier Zwirtz" ]
 let tags = "fsharp"
 
 // File system information 
-let solutionFile  = "FSharp.FileSystem.sln"
+let solutionFile  = "FSharp.IO.FileSystem.sln"
 
 // Pattern specifying assemblies to be tested using Xunit
 let testAssemblies = "tests/**/bin/Release/*Tests*.dll"
@@ -56,7 +56,7 @@ let gitOwner = "xavierzwirtz"
 let gitHome = "https://github.com/" + gitOwner
 
 // The name of the project on GitHub
-let gitName = "FSharp.FileSystem"
+let gitName = "FSharp.IO.FileSystem"
 
 // The url for the raw files hosted
 let gitRaw = environVarOrDefault "gitRaw" "https://raw.github.com/xavierzwirtz"

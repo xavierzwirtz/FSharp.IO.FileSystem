@@ -1,4 +1,4 @@
-﻿namespace FSharp.FileSystem
+﻿namespace FSharp.IO.FileSystem
 
 open System.Text.RegularExpressions
 

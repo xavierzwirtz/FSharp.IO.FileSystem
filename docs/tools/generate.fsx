@@ -11,17 +11,17 @@
 // (This is the original behaviour of ProjectScaffold prior to multi project support)
 let referenceBinaries = []
 // Web site location for the generated documentation
-let website = "/FSharp.FileSystem"
+let website = "/FSharp.IO.FileSystem"
 
-let githubLink = "http://github.com/xavierzwirtz/FSharp.FileSystem"
+let githubLink = "http://github.com/xavierzwirtz/FSharp.IO.FileSystem"
 
 // Specify more information about your project
 let info =
-  [ "project-name", "FSharp.FileSystem"
+  [ "project-name", "FSharp.IO.FileSystem"
     "project-author", "Xavier Zwirtz"
     "project-summary", "FSharp'y methods of reading and writing to the file system."
     "project-github", githubLink
-    "project-nuget", "http://nuget.org/packages/FSharp.FileSystem" ]
+    "project-nuget", "http://nuget.org/packages/FSharp.IO.FileSystem" ]
 
 // --------------------------------------------------------------------------------------
 // For typical project, no changes are needed below

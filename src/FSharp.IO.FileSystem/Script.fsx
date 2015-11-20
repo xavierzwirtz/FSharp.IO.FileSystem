@@ -2,7 +2,7 @@
 // for more guidance on F# programming.
 
 #load "Library.fs"
-open FSharp.FileSystem
+open FSharp.IO.FileSystem
 
 let num = Library.hello 42
 printfn "%i" num
