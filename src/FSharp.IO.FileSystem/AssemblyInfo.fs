@@ -1,7 +1,7 @@
 ﻿namespace System
 open System.Reflection
 
-[<assembly: AssemblyTitleAttribute("FSharp.FileSystem.IO")>]
+[<assembly: AssemblyTitleAttribute("FSharp.IO.FileSystem")>]
 [<assembly: AssemblyProductAttribute("FSharp.IO.FileSystem")>]
 [<assembly: AssemblyDescriptionAttribute("FSharp'y methods of reading and writing to the file system.")>]
 [<assembly: AssemblyVersionAttribute("1.0.0")>]

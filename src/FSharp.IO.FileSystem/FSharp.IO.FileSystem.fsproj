@@ -49,7 +49,6 @@
     <Compile Include="File.fs" />
     <Compile Include="Globbing.fs" />
     <Compile Include="Directory.fs" />
-    <None Include="Script.fsx" />
     <None Include="paket.references" />
     <None Include="paket.template" />
   </ItemGroup>
@@ -77,4 +76,15 @@
   </Target>
   -->
   <Import Project="..\..\.paket\paket.targets" />
+  <Choose>
+    <When Condition="$(TargetFrameworkIdentifier) == '.NETFramework' And ($(TargetFrameworkVersion) == 'v4.0' Or $(TargetFrameworkVersion) == 'v4.5' Or $(TargetFrameworkVersion) == 'v4.5.1' Or $(TargetFrameworkVersion) == 'v4.5.2' Or $(TargetFrameworkVersion) == 'v4.5.3' Or $(TargetFrameworkVersion) == 'v4.6')">
+      <ItemGroup>
+        <Reference Include="Chessie">
+          <HintPath>..\..\packages\Chessie\lib\net40\Chessie.dll</HintPath>
+          <Private>True</Private>
+          <Paket>True</Paket>
+        </Reference>
+      </ItemGroup>
+    </When>
+  </Choose>
 </Project>

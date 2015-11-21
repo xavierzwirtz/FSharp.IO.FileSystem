@@ -1,8 +1,11 @@
 module FSharp.IO.FileSystem.Tests.DirectoryTests
 
+open Xunit
+
+open Chessie.ErrorHandling
+
 open FSharp.IO.FileSystem
 open FSharp.IO.FileSystem.Path
-open Xunit
 
 let tempFolder() = 
     tempPath() @@ System.Guid.NewGuid().ToString()
@@ -10,15 +13,15 @@ let tempFolder() =
 let createDir (spec : string seq) =
     let root = tempFolder()
     for file in spec do
-        Directory.create (root @@ (file |> Path.directoryName))
-        File.writeAllText (root @@ file) file
+        Directory.create (root @@ (file |> Path.directoryName)) |> returnOrFail
+        File.writeAllText (root @@ file) file |> returnOrFail
     root
 
 let checkDir (spec : string seq) path =
     printfn "path %s" path
     for file in spec do
         printfn "file %s" file
-        let contents = (path @@ file) |> File.readAllText
+        let contents = (path @@ file) |> File.readAllText |> returnOrFail
         if contents <> file then
             failwith "contents dont match"
 
@@ -31,7 +34,7 @@ let ``copyToDir`` () =
     let source = createDir spec
     let dest = tempFolder()
     let dirName = source |> Path.fileName
-    Directory.copyToDir source dest File.Fail
+    Directory.copyToDir source dest File.Fail |> returnOrFail
     checkDir spec (dest @@ dirName)
 
 
@@ -43,7 +46,7 @@ let ``copyContentsToDir`` () =
                  "bog/bid" ]
     let source = createDir spec
     let dest = tempFolder()
-    Directory.copyContentsToDir source dest File.Fail
+    Directory.copyContentsToDir source dest File.Fail |> returnOrFail
     checkDir spec (dest)
 
 
@@ -55,6 +58,6 @@ let ``glob`` () =
                  "bog/bid" ]
     let source = createDir spec
 
-    let files = source |> Directory.getFilesWithGlob "**/*.bar" |> Seq.toList
+    let files = source |> Directory.getFilesWithGlob "**/*.bar" |> returnOrFail |> Seq.toList
     printfn "%A" files
     Assert.Equal<list<string>>([source @@ "foo/bar2/bill.bar"], files)
