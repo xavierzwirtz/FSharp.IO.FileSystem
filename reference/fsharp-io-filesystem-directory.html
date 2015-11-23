@@ -60,7 +60,7 @@
             copyContentsToDir (...)
           </code>
           <div class="tip" id="1">
-            <strong>Signature:</strong> source:string -&gt; destination:string -&gt; existingHandling:ExistingHandling -&gt; Result&lt;unit,exn&gt;<br />
+            <strong>Signature:</strong> source:string -&gt; destination:string -&gt; existingHandling:ExistingHandling -&gt; Result&lt;unit,string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -81,7 +81,7 @@
             copyToDir (...)
           </code>
           <div class="tip" id="2">
-            <strong>Signature:</strong> source:string -&gt; destination:string -&gt; existingHandling:ExistingHandling -&gt; Result&lt;unit,exn&gt;<br />
+            <strong>Signature:</strong> source:string -&gt; destination:string -&gt; existingHandling:ExistingHandling -&gt; Result&lt;unit,string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -102,7 +102,7 @@
             create path
           </code>
           <div class="tip" id="3">
-            <strong>Signature:</strong> path:string -&gt; Result&lt;unit,exn&gt;<br />
+            <strong>Signature:</strong> path:string -&gt; Result&lt;unit,string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -138,7 +138,7 @@
             getDirectories path
           </code>
           <div class="tip" id="5">
-            <strong>Signature:</strong> path:string -&gt; Result&lt;seq&lt;string&gt;,exn&gt;<br />
+            <strong>Signature:</strong> path:string -&gt; Result&lt;seq&lt;string&gt;,string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -156,7 +156,7 @@
             getFiles path
           </code>
           <div class="tip" id="6">
-            <strong>Signature:</strong> path:string -&gt; Result&lt;seq&lt;string&gt;,exn&gt;<br />
+            <strong>Signature:</strong> path:string -&gt; Result&lt;seq&lt;string&gt;,string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -174,7 +174,7 @@
             getFilesWithGlob pattern path
           </code>
           <div class="tip" id="7">
-            <strong>Signature:</strong> pattern:string -&gt; path:string -&gt; Result&lt;seq&lt;string&gt;,exn&gt;<br />
+            <strong>Signature:</strong> pattern:string -&gt; path:string -&gt; Result&lt;seq&lt;string&gt;,string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
@@ -192,7 +192,7 @@
             moveToDir source destination
           </code>
           <div class="tip" id="8">
-            <strong>Signature:</strong> source:string -&gt; destination:string -&gt; Result&lt;unit,exn&gt;<br />
+            <strong>Signature:</strong> source:string -&gt; destination:string -&gt; Result&lt;unit,string&gt;<br />
                       </div>
         </td>
         <td class="xmldoc">
