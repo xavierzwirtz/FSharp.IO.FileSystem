@@ -12,4 +12,4 @@ let tryCatch func =
     try
         ok (func())
     with
-    | ex -> fail ex
+    | ex -> fail ex.Message

@@ -73,5 +73,6 @@ let ``copy fail - exist`` () =
     match res with
     | Bad messages ->
         let message = messages |> Seq.exactlyOne
-        Assert.Equal(typedefof<System.IO.IOException>, message.GetType())
+        printfn "%s" message 
+        Assert.Equal(sprintf @"The file '%s' already exists." dest,message)
     | _ -> failwith "should have failed"
