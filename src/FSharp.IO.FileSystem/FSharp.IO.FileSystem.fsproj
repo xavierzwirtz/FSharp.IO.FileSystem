@@ -47,8 +47,8 @@
     <Compile Include="InternalTypes.fs" />
     <Compile Include="Path.fs" />
     <Compile Include="File.fs" />
-    <Compile Include="Globbing.fs" />
     <Compile Include="Directory.fs" />
+    <Compile Include="Globbing.fs" />
     <None Include="paket.references" />
     <None Include="paket.template" />
   </ItemGroup>

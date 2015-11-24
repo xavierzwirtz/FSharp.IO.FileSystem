@@ -1,6 +1,9 @@
 ﻿namespace FSharp.IO.FileSystem
 
 open System.Text.RegularExpressions
+open Chessie.ErrorHandling
+
+open Path
 
 /// Provides glob matching
 
@@ -52,3 +55,97 @@ module Globbing =
     let isMatch pattern path : bool = 
         let matcher = compileMatch pattern
         matcher path
+
+    
+    type private SearchOption = 
+        | Directory of string
+        | Drive of string
+        | Recursive
+        | FilePattern of string
+
+    let private checkSubDirs absolute (dir : string) root = 
+        if dir.Contains "*" then 
+            System.IO.Directory.EnumerateDirectories(root, dir, System.IO.SearchOption.TopDirectoryOnly) |> Seq.toList
+        else 
+            let path = Path.combine root dir
+        
+            let dir =
+                if absolute then dir
+                else path
+            if Directory.exists dir then
+                [Directory.fullName dir |> returnOrFail]
+            else 
+                []
+
+    let rec private buildPaths acc (input : SearchOption list) = 
+        match input with
+        | [] -> acc
+        | Directory(name) :: t -> 
+            let subDirs = 
+                acc
+                |> List.map (checkSubDirs false name)
+                |> List.concat
+            buildPaths subDirs t
+        | Drive(name) :: t -> 
+            let subDirs = 
+                acc
+                |> List.map (checkSubDirs true name)
+                |> List.concat
+            buildPaths subDirs t
+        | Recursive :: [] -> 
+            let dirs = 
+                Seq.collect (fun dir -> System.IO.Directory.EnumerateFileSystemEntries(dir, "*", System.IO.SearchOption.AllDirectories)) acc 
+                |> Seq.toList
+            buildPaths (acc @ dirs) []
+        | Recursive :: t -> 
+            let dirs = 
+                Seq.collect (fun dir -> System.IO.Directory.EnumerateDirectories(dir, "*", System.IO.SearchOption.AllDirectories)) acc 
+                |> Seq.toList
+            buildPaths (acc @ dirs) t
+        | FilePattern(pattern) :: t -> 
+             Seq.collect (fun dir -> 
+                                if Directory.exists(Path.combine dir pattern)
+                                then seq { yield Path.combine dir pattern }
+                                else 
+                                    try
+                                        System.IO.Directory.EnumerateFiles(dir, pattern)
+                                    with
+                                        | :? System.IO.PathTooLongException as ex ->
+                                            Array.toSeq [| |]
+                                ) acc |> Seq.toList
+
+    let private driveRegex = Regex(@"^[A-Za-z]:$", RegexOptions.Compiled)
+    let search (baseDir : string) (pattern : string) = 
+        let baseDir = normalize baseDir
+        let input = normalize pattern
+        let input = 
+            if input.StartsWith baseDir then
+                input.Remove(0, baseDir.Length)
+            else
+                input
+        let filePattern = Path.fileName(input)
+        input.Split([| '/'; '\\' |], System.StringSplitOptions.RemoveEmptyEntries)
+        |> Seq.map (function 
+               | "**" -> Recursive
+               | a when a = filePattern -> FilePattern(a)
+               | a when driveRegex.IsMatch a -> Directory(a + "\\")
+               | a -> Directory(a))
+        |> Seq.toList
+        |> buildPaths [ baseDir ]
+        |> List.map normalize
+
+    
+    let copyTo sourceDir destinationDir pattern existingHandling =
+        let sourceDir = Path.normalize sourceDir
+        let destinationDir = Path.normalize destinationDir
+        let files = search sourceDir pattern
+
+        trial {
+            for source in files do
+                let rel = source.Substring(sourceDir.Length + 1)
+                let dest = Path.combine destinationDir rel
+                let destDir = Path.directoryName dest
+                do! Directory.create destDir
+                do! File.copyTo source dest existingHandling
+        }
+    

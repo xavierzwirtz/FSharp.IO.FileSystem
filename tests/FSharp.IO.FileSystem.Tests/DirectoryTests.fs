@@ -48,16 +48,3 @@ let ``copyContentsToDir`` () =
     let dest = tempFolder()
     Directory.copyContentsToDir source dest File.Fail |> returnOrFail
     checkDir spec (dest)
-
-
-[<Fact>]
-let ``glob`` () =
-    let spec = [ "foo/bar1/baz" 
-                 "foo/bar2/baz"
-                 "foo/bar2/bill.bar"
-                 "bog/bid" ]
-    let source = createDir spec
-
-    let files = source |> Directory.getFilesWithGlob "**/*.bar" |> returnOrFail |> Seq.toList
-    printfn "%A" files
-    Assert.Equal<list<string>>([source @@ "foo/bar2/bill.bar"], files)

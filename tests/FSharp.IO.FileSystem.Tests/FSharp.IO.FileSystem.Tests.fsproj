@@ -65,8 +65,9 @@
   <ItemGroup>
     <Compile Include="FileTests.fs" />
     <Compile Include="PathTests.fs" />
-    <Compile Include="GlobbingTests.fs" />
     <Compile Include="DirectoryTests.fs" />
+    <Compile Include="GlobbingMatchTests.fs" />
+    <Compile Include="GlobbingTests.fs" />
     <None Include="paket.references" />
     <Content Include="App.config" />
   </ItemGroup>

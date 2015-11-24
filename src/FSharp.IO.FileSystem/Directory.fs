@@ -26,30 +26,6 @@ module Directory =
         tryCatch (fun() -> 
             IODirectory.GetDirectories(path) 
             |> Seq.ofArray)
-    
-    let getFilesWithGlob pattern path =
-        let matcher = Globbing.compileMatch pattern
-        let rec checkDir path =
-            trial {
-                let! matchingFiles = getFiles path
-                let files = 
-                    seq {
-                        for file in matchingFiles do
-                            if matcher file then
-                                yield file
-                    }
-
-                let! dirs = getDirectories path
-                let! children = 
-                    dirs 
-                    |> Seq.map checkDir
-                    |> collect
-                let children = children |> Seq.concat
-                return Seq.concat [files; children]
-            }
-
-            
-        checkDir path
 
     let moveToDir source destination =
         tryCatch(fun () ->
