@@ -1,3 +1,6 @@
+#### 3.1.1 - November 24 2015
+* Support resolving paths with glob chars in them.
+
 #### 3.1.0 - November 24 2015
 * Added Path.resolve
 
