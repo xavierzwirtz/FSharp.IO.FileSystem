@@ -1,3 +1,6 @@
+#### 3.1.0 - November 24 2015
+* Added Path.resolve
+
 #### 3.0.0 - November 20 2015
 * Moved Directory.getFilesWithGlob to Globbing.Search
 * Added Globbing.copyTo
