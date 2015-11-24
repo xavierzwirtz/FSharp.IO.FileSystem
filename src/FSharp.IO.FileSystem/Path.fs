@@ -58,7 +58,6 @@ module Path =
                 else
                     IOPath.DirectorySeparatorChar.ToString() + comb
             let uriPath = "file://" + comb
-            printfn "uri: %s" uriPath
             let uri = System.Uri(uriPath)
             let abs = uri.AbsolutePath |> normalize
             if rooted then
