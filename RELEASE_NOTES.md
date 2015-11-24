@@ -1,3 +1,10 @@
+#### 3.0.0 - November 20 2015
+* Moved Directory.getFilesWithGlob to Globbing.Search
+* Added Globbing.copyTo
+* Added Directory.fullName
+* Added Path.isRooted
+* Added Path.isRelative
+
 #### 2.0.0 - November 20 2015
 * Switched to handing back string as failure message.
 
