@@ -20,6 +20,19 @@ let ``search`` () =
     Assert.Equal<list<string>>([source @@ "foo/bar2/bill.bar"], files)
 
 [<Fact>]
+let ``search rooted pattern`` () =
+    let spec = [ "foo/bar1/baz" 
+                 "foo/bar2/baz"
+                 "foo/bar2/bill.bar"
+                 "bog/bid" ]
+    let source = createDir spec
+    printfn "%s" source
+    let files = Globbing.search source (source @@ "**/*.bar") |> Seq.toList
+
+    Assert.Equal<list<string>>([source @@ "foo/bar2/bill.bar"], files)
+
+
+[<Fact>]
 let ``copyTo`` () =
     let spec = [ "foo/bar1/baz" 
                  "foo/bar2/baz"

@@ -1,3 +1,6 @@
+#### 3.1.2 - November 24 2015
+* Removed debug print.
+
 #### 3.1.1 - November 24 2015
 * Support resolving paths with glob chars in them.
 
