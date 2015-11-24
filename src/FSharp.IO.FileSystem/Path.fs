@@ -10,7 +10,7 @@ module Path =
     let normalize (path : string) = 
         path.Replace("\\", IOPath.DirectorySeparatorChar.ToString())
             .Replace("/", IOPath.DirectorySeparatorChar.ToString())
-            .TrimEnd(IOPath.DirectorySeparatorChar).ToLower()
+            .TrimEnd(IOPath.DirectorySeparatorChar)
 
     let combine path1 path2 =
         IOPath.Combine(normalize path1, normalize path2)
@@ -32,6 +32,15 @@ module Path =
     
     let split path =
         (normalize path).Split(IOPath.DirectorySeparatorChar)
+
+    let isRooted path =
+        IOPath.IsPathRooted(normalize path)
+
+    let isRelative path =
+        path
+        |> normalize
+        |> isRooted
+        |> not
 
     let tempFile() =
         IOPath.GetTempFileName()
