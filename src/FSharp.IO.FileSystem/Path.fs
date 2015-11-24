@@ -43,15 +43,28 @@ module Path =
         |> not
 
     let resolve referencePath path = 
+        let path = normalize path
+        let referencePath = normalize referencePath
         if isRooted path then
-            normalize path
+            path
         else
             let comb = combine referencePath path
-            let rooted = IOPath.GetFullPath comb
-            if referencePath.Contains(IOPath.VolumeSeparatorChar.ToString()) then
-                rooted
+            let startsWithSep = 
+                comb.StartsWith(IOPath.DirectorySeparatorChar.ToString())
+            let rooted = isRooted comb
+            let comb = 
+                if startsWithSep then
+                    comb
+                else
+                    IOPath.DirectorySeparatorChar.ToString() + comb
+            let uriPath = "file://" + comb
+            printfn "uri: %s" uriPath
+            let uri = System.Uri(uriPath)
+            let abs = uri.AbsolutePath |> normalize
+            if rooted then
+                abs
             else
-                rooted.Substring(2)
+                abs.Substring(1)
 
     let tempFile() =
         IOPath.GetTempFileName()

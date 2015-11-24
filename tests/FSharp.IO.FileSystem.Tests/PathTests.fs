@@ -44,5 +44,9 @@ let ``resolve`` () =
     eq "/foo" "/bar" "/foo"
     eq "/bar/foo" "/bar" "foo"
     eq "/bar/baz" "/bar/baz/foo" "../"
+    eq "/bar/baz/**/*.*" "/bar/baz/foo" "../**/*.*"
+    eq "baz" "baz/bar" "../"
+
+    eq "/bar/baz/foo/bill/bing" "/bar/baz/foo" "bill/bo/../bing"
 
     eq "C:/bar/baz" "C:/bar/baz/foo" "../"
