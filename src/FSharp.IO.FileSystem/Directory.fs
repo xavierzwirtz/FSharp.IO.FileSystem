@@ -13,6 +13,9 @@ module Directory =
     let create path =
         tryCatch (fun() -> 
             IODirectory.CreateDirectory path |> ignore )
+    let fullName path =
+        tryCatch(fun () ->
+            System.IO.DirectoryInfo(path).FullName)
 
     let getFiles path = 
         tryCatch (fun() -> 
