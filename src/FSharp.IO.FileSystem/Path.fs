@@ -42,6 +42,17 @@ module Path =
         |> isRooted
         |> not
 
+    let resolve referencePath path = 
+        if isRooted path then
+            normalize path
+        else
+            let comb = combine referencePath path
+            let rooted = IOPath.GetFullPath comb
+            if referencePath.Contains(IOPath.VolumeSeparatorChar.ToString()) then
+                rooted
+            else
+                rooted.Substring(2)
+
     let tempFile() =
         IOPath.GetTempFileName()
 

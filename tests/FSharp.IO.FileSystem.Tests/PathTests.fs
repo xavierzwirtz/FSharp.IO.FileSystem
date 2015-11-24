@@ -31,3 +31,18 @@ let ``isRooted && isRelative`` () =
     rel "../relative"
     rel "..\\relative"
 
+[<Fact>]
+let ``resolve`` () =
+    let res root path = 
+        Path.resolve root path
+    
+    let eq expected root path =
+        let expected = normalize expected
+        let actual = Path.resolve root path
+        Assert.Equal(expected, actual)
+
+    eq "/foo" "/bar" "/foo"
+    eq "/bar/foo" "/bar" "foo"
+    eq "/bar/baz" "/bar/baz/foo" "../"
+
+    eq "C:/bar/baz" "C:/bar/baz/foo" "../"
