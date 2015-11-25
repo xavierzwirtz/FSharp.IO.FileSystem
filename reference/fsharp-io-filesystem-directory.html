@@ -117,9 +117,72 @@
         <td class="member-name">
 
           <code onmouseout="hideTip(event, '4', 4)" onmouseover="showTip(event, '4', 4)">
-            exists path
+            delete path
           </code>
           <div class="tip" id="4">
+            <strong>Signature:</strong> path:string -&gt; Result&lt;unit,string&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/xavierzwirtz/FSharp.IO.FileSystem/tree/master/src/FSharp.IO.FileSystem/Directory.fs#L59-59" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Will delete an empty directory. If <code>path</code> is not empty then a failure will be returned.</p>
+
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '5', 5)" onmouseover="showTip(event, '5', 5)">
+            deleteContents path
+          </code>
+          <div class="tip" id="5">
+            <strong>Signature:</strong> path:string -&gt; Result&lt;unit,string&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/xavierzwirtz/FSharp.IO.FileSystem/tree/master/src/FSharp.IO.FileSystem/Directory.fs#L67-67" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Deletes the contents of a directory recursivly.</p>
+
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '6', 6)" onmouseover="showTip(event, '6', 6)">
+            deleteRecursive path
+          </code>
+          <div class="tip" id="6">
+            <strong>Signature:</strong> path:string -&gt; Result&lt;unit,string&gt;<br />
+                      </div>
+        </td>
+        <td class="xmldoc">
+            <a href="http://github.com/xavierzwirtz/FSharp.IO.FileSystem/tree/master/src/FSharp.IO.FileSystem/Directory.fs#L63-63" class="github-link">
+              <img src="../content/img/github.png" class="normal" />
+              <img src="../content/img/github-blue.png" class="hover" />
+            </a>
+          <p>Will delete a directory. All contents are deleted recursivly.</p>
+
+
+
+        </td>
+      </tr>
+      <tr>
+        <td class="member-name">
+
+          <code onmouseout="hideTip(event, '7', 7)" onmouseover="showTip(event, '7', 7)">
+            exists path
+          </code>
+          <div class="tip" id="7">
             <strong>Signature:</strong> path:string -&gt; bool<br />
                       </div>
         </td>
@@ -134,10 +197,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '5', 5)" onmouseover="showTip(event, '5', 5)">
+          <code onmouseout="hideTip(event, '8', 8)" onmouseover="showTip(event, '8', 8)">
             fullName path
           </code>
-          <div class="tip" id="5">
+          <div class="tip" id="8">
             <strong>Signature:</strong> path:string -&gt; Result&lt;string,string&gt;<br />
                       </div>
         </td>
@@ -152,10 +215,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '6', 6)" onmouseover="showTip(event, '6', 6)">
+          <code onmouseout="hideTip(event, '9', 9)" onmouseover="showTip(event, '9', 9)">
             getDirectories path
           </code>
-          <div class="tip" id="6">
+          <div class="tip" id="9">
             <strong>Signature:</strong> path:string -&gt; Result&lt;seq&lt;string&gt;,string&gt;<br />
                       </div>
         </td>
@@ -170,10 +233,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '7', 7)" onmouseover="showTip(event, '7', 7)">
+          <code onmouseout="hideTip(event, '10', 10)" onmouseover="showTip(event, '10', 10)">
             getFiles path
           </code>
-          <div class="tip" id="7">
+          <div class="tip" id="10">
             <strong>Signature:</strong> path:string -&gt; Result&lt;seq&lt;string&gt;,string&gt;<br />
                       </div>
         </td>
@@ -188,10 +251,10 @@
       <tr>
         <td class="member-name">
 
-          <code onmouseout="hideTip(event, '8', 8)" onmouseover="showTip(event, '8', 8)">
+          <code onmouseout="hideTip(event, '11', 11)" onmouseover="showTip(event, '11', 11)">
             moveToDir source destination
           </code>
-          <div class="tip" id="8">
+          <div class="tip" id="11">
             <strong>Signature:</strong> source:string -&gt; destination:string -&gt; Result&lt;unit,string&gt;<br />
                       </div>
         </td>
