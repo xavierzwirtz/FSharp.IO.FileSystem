@@ -1,3 +1,9 @@
+#### 3.2.0 - November 25 2015
+* Added Directory.delete
+* Added Directory.deleteRecursive
+* Added Directory.deleteContents
+* Added File.delete
+
 #### 3.1.2 - November 24 2015
 * Removed debug print.
 
