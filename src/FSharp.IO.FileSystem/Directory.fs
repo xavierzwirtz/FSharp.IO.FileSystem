@@ -53,3 +53,25 @@ module Directory =
         let name = source |> Path.fileName
 
         copyContentsToDir source (destination @@ name) existingHandling
+
+
+    /// Will delete an empty directory. If `path` is not empty then a failure will be returned.
+    let delete path =
+        tryCatch(fun () -> IODirectory.Delete(path))
+
+    /// Will delete a directory. All contents are deleted recursivly.
+    let deleteRecursive path =
+        tryCatch(fun () -> IODirectory.Delete(path, true))
+
+    /// Deletes the contents of a directory recursivly.
+    let deleteContents path =
+        trial {
+            let! dirs = getDirectories path
+            let! files = getFiles path
+
+            for dir in dirs do
+                do! deleteRecursive dir
+
+            for file in files do
+                do! File.delete file
+        }

@@ -41,3 +41,6 @@ module File =
     let moveTo source destination =
         tryCatch (fun () -> 
             IOFile.Move(source, destination))
+
+    let delete path = 
+        tryCatch (fun () -> IOFile.Delete(path))
