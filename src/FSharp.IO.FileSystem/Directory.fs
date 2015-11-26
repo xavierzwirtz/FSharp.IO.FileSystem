@@ -68,10 +68,10 @@ module Directory =
         trial {
             let! dirs = getDirectories path
             let! files = getFiles path
+            
+            for file in files do
+                do! File.delete file
 
             for dir in dirs do
                 do! deleteRecursive dir
-
-            for file in files do
-                do! File.delete file
         }
