@@ -140,12 +140,17 @@ module Globbing =
         let destinationDir = Path.normalize destinationDir
         let files = search sourceDir pattern
 
-        trial {
-            for source in files do
-                let rel = source.Substring(sourceDir.Length + 1)
-                let dest = Path.combine destinationDir rel
-                let destDir = Path.directoryName dest
-                do! Directory.create destDir
-                do! File.copyTo source dest existingHandling
-        }
-    
+        // cant use trial expression here. Causes issues with stack overflows
+        let res =
+            seq {
+                for source in files do
+                    let rel = source.Substring(sourceDir.Length + 1)
+                    let dest = Path.combine destinationDir rel
+                    let destDir = Path.directoryName dest
+
+                    let res = Directory.create destDir
+                    yield
+                        res >>= (fun (_) ->
+                            File.copyTo source dest existingHandling)
+            }
+        res |> collect >>= (fun (_) -> ignore() |> ok)
