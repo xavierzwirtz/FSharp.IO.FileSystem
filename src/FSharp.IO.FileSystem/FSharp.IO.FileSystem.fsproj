@@ -51,6 +51,7 @@
     <Compile Include="Globbing.fs" />
     <None Include="paket.references" />
     <None Include="paket.template" />
+    <None Include="Script.fsx" />
   </ItemGroup>
   <PropertyGroup>
     <MinimumVisualStudioVersion Condition="'$(MinimumVisualStudioVersion)' == ''">11</MinimumVisualStudioVersion>
