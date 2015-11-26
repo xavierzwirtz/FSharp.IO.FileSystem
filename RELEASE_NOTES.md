@@ -1,3 +1,8 @@
+#### 3.2.1 - November 25 2015
+* Fixed issue with large copies causing a stack overflow.
+* Fixed Directory.deleteContents.
+
+
 #### 3.2.0 - November 25 2015
 * Added Directory.delete
 * Added Directory.deleteRecursive
